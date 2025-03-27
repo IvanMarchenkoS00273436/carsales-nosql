@@ -30,10 +30,15 @@ export class CarlistComponent {
   addCar(make:string, model:string, year:string,imageUrl:string):boolean {
     let addCar:ICar;
     addCar=new NewCar(make,model, year,imageUrl);
-    this._carApiService.addCarDetails(addCar).subscribe(carsData =>
-      { this.carsData = carsData}
-    );
-
+    this._carApiService.addCarDetails(addCar).subscribe(carsData => {
+      this.carsData = carsData;
+      this.getCars();
+    });
+    
     return false;
+  }
+
+  refreshCars() {
+    this.getCars();
   }
 }

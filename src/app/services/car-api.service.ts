@@ -12,7 +12,7 @@ import { ICar } from '../interfaces/car';
 
 export class CarApiService {
 
-  private _siteURL: string = 'http://localhost:5050/cars';
+  private _siteURL: string = 'http://13.217.161.150:5050/cars';
 
   constructor(private _http: HttpClient) { }
 
